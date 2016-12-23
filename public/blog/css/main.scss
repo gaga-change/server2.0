@@ -1,0 +1,29 @@
+/*
+* Bootstrap v3.3.7 (http://getbootstrap.com)
+* 主导为bootstrap的思想
+*/
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap/normalize";  //normalize 重置样式
+//@import "bootstrap/print";   //打印
+@import "bootstrap/glyphicons"; //图标字库
+
+// Core CSS
+@import "bootstrap/scaffolding";  //脚手架
+@import "bootstrap/type";    //排版
+@import "bootstrap/code";    //代码
+@import "bootstrap/grid";    //格子
+@import "bootstrap/tables";  //表格
+@import "bootstrap/forms";   //表单
+@import "bootstrap/buttons"; //按钮
+
+// Utility classes
+@import "bootstrap/utilities"; //一些工具
+@import "bootstrap/responsive-utilities" ;  //响应工具
+
+@import "strict";
+
+

@@ -1,0 +1,32 @@
+$height: 40px;
+.top {
+  button, .login, h3 {
+    height: $height;
+    line-height: $height;
+  }
+  button,  .login {
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+  button {
+    border: none;
+    background-color: rgba(1,255,115,0);
+    left: 15px;
+    .icon-bar {
+      display: block;
+      width: 30px;
+      height: 0px;
+      border: 2px solid #c7c66b;
+      margin-top: 3px;
+    }
+  }
+  h3 {
+    padding: 0;
+    margin: 0;
+
+  }
+  .login {
+    right: 15px;
+  }
+}

@@ -1,10 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-cmn-Hans" ng-app="Blog">
 <head>
-    <meta charset="UTF-8">
-    <title>title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>艺术家改变世界</title>
+    <meta name="description" content="前端知识">
+    <meta name="author" content="严俊东">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+    maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/lib/animate.css/animate.min.css">
+    <link rel="stylesheet" href="/blog/css/main.css">
+    <base target="_blank" />
 </head>
-<body>
-content
+<body ng-controller="MainCtrl">
+<!--[if lt IE 8]>
+<p class="browserupgrade">
+    您使用IE浏览器版本 <strong>过低</strong> 。
+    <a href="http://browsehappy.com/">请更新IE浏览器</a>
+</p>
+<![endif]-->
+<div class="text"></div>
+<!--小屏幕top区-->
+<div class="container-fluid top">
+    <!--三横线-->
+    <button class="" type="button" ng-click="showMenu()">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <h3 class="text-center">俊东的博客</h3>
+    <div class="login"> <a href="#">登入</a></div>
+</div>
+<!--总内容-->
+<div class="container-fluid">
+    <!--左边菜单-->
+    <div class="m-left" id="leftMenu">
+        <div class="menu">
+            <div class="content">
+                <button class="go-left visible-xs-block" type="button" ng-click="hideMenu()">
+                   <span class="glyphicon glyphicon-arrow-left"></span>
+                </button>
+                <h3 class="text-hide">俊东的博客</h3>
+                <blockquote class="blockquote-reverse">无止境的前端~</blockquote>
+                <img class="img-responsive img-circle center-block" src="/blog/img/head.jpg" alt="严俊东">
+                <p class="text-center">
+                    <span class="name">严俊东</span><span class="job">前端工程师</span>
+                </p>
+                <ul class="list-menu ">
+                    <li><a ui-sref="index">首页</a></li>
+                    <li><a ui-sref="all">所有文档</a></li>
+                    <li class="my-class"><a ng-click="showSonMenu()">文档分类 <span class="caret" id="caret"></span></a>
+                        <ul class="son-list-menu menu-move" ng-if="ifShowSonMenu" id="sonMenu">
+                            <li ng-repeat="i in menuList" ><a ui-sref="{{i.id}}" ng-bind="i.name"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--<form action="#">-->
+                <!--<input type="text" placeholder="搜索">-->
+                <!--</form>-->
+            </div>
+        </div>
+    </div>
+    <!--右边内容-->
+    <div class="m-right" style="position: relative">
+        <div ui-view="content" class="slide-animate"></div>
+    </div>
+</div>
+
 </body>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/angular/angular.min.js"></script>
+<script src="/lib/angular/angular-animate.min.js"></script>
+<script src="/lib/angular/angular-ui-router.min.js"></script>
+<script src="/blog/js/main.js"></script>
 </html>

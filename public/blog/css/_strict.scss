@@ -1,0 +1,102 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "my/class";
+@import "my/leftMenu";
+@import "my/pt";
+@import "my/animate";
+@import "my/top";
+@import "my/firstPage";
+.m-left {
+  @extend .row;
+  .content {
+    @extend %transition;
+  }
+  background-color: $alert-warning-border;
+  //background: url("../img/bg.jpg") no-repeat;
+  background-size: contain;
+  position: fixed;
+  //transition: all 1s ease;
+  overflow: hidden;
+  @extend %transition;
+  left: 15px;
+  z-index: 10;
+}
+
+
+.m-right {
+  //height: 500px;
+  //transition: all 1s ease;
+  @extend %transition;
+  //background-color: $btn-primary-bg;
+  //overflow: hidden;
+  //padding: 0 15px;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  //transition: all 1s ease;
+  @extend %transition;
+  background-color: rgba(250,235,204,0.53);
+  //background-color: rgba(203, 203, 203, 0.45);
+}
+
+//小屏幕  屏幕 < xs-max 的时候
+@media (max-width: $screen-xs-max) {
+  .m-left {
+    width: 180px;
+    .content{
+      width: 180px;
+    }
+    top: 0;
+    bottom: 0;
+    left: -180px;
+    z-index: 10;
+  }
+  .m-left.show{
+    left: 15px;
+  }
+  .m-right {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 40px;
+  }
+  .top {
+    height: 40px;
+  }
+}
+
+//中屏幕  屏幕 < sm-max
+@media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
+  .m-left {
+    width: 180px;
+    .content{
+      width: 180px;
+    }
+    top: 0;
+    bottom: 0;
+  }
+  .m-right {
+    margin-right: -15px;
+    margin-left: 165px;
+  }
+}
+
+//大屏幕  屏幕 < sm-md
+@media (min-width: $screen-sm-max) {
+  .m-left {
+    width: 220px;
+    .content{
+      width: 220px;
+    }
+    top: 0;
+    bottom: 0;
+  }
+  .m-right {
+    margin-right: -15px;
+    margin-left: 205px;
+  }
+}

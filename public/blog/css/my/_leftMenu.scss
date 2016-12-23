@@ -1,0 +1,61 @@
+@import "class";
+.go-left {
+  span{
+    //@extend %purple;
+    color: #5e99b5;
+  }
+  background-color: rgba(255,255,255,0.01);
+  font-size: 30px;
+  border: none;
+  float: right;
+}
+
+.my-class {
+  transition: all 1s ease;
+}
+
+.list-menu {
+  margin-top: 40px;
+  @extend .list-unstyled;
+  & > li {
+    @extend .text-center;
+    @extend %hvr-outline-in;
+    padding: 10px 0;
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+
+.menu {
+  .content {
+    //margin-right: -15px;
+    overflow: hidden;
+  }
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  //overflow-x:
+  padding-right: 30px;
+  h3 {
+    margin-top: 30px;
+    height: 80px;
+    background-image: url("../img/title.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: contain;
+  }
+  img {
+    width: 50%;
+  }
+  p {
+    margin-top: 10px;
+    span {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.first-page {
+  padding: 0 15px ;
+  p {
+    &:before {
+      content: " ";
+      display: inline-block;
+      padding: 0 12px;
+    }
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,64 @@
+/*从高度为0开始 变为高度*/
+
+.menu-move {
+  @extend .list-unstyled;
+  //background-color: red;
+  & > li {
+    //background-color: red;
+    display: block;
+    height: 30px;
+    overflow: hidden;
+    padding: 5px 0;
+  }
+}
+
+.menu-move.ng-enter {
+  display: block;
+  overflow: hidden;
+  transition: all .5s ease;
+  & li {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 0;
+    transition: all .5s ease;
+  }
+}
+.menu-move.ng-leave {
+  display: block;
+  overflow: hidden;
+  transition: all .5s ease;
+  &>li {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 0;
+    transition: all .5s ease;
+  }
+}
+.menu-move.ng-enter-active {
+  & > li {
+    height: 30px;
+    padding: 5px 0;
+  }
+}
+
+//.menu-move.ng-enter-stagger {
+  //display: block;
+  //transition-delay: 300ms;
+//}
+
+.slide-animate {
+  position: relative;
+  overflow: hidden;
+}
+.slide-animate.ng-enter {
+  position: absolute;
+  width: 100%;
+  animation: fadeInLeft 0.5s ease ;
+}
+.slide-animate.ng-leave {
+  position: absolute;
+  width: 100%;
+  animation: fadeOutRight 0.5s ease ;
+}
