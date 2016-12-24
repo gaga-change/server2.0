@@ -1,0 +1,20 @@
+.list-fa {
+    //background-color: #aecf32;
+    overflow: hidden;
+    ul {
+        @extend .list-unstyled;
+    }
+    @at-root .item-1 {
+        @extend %hvr-reveal;
+        margin: 20px 20px 30px;
+        padding-bottom: 10px;
+        h3,p ,span{
+            @extend .text-center;
+        }
+        span {
+            display: block;
+        }
+    }
+}
+
+

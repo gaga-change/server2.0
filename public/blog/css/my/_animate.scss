@@ -1,64 +1,92 @@
 /*从高度为0开始 变为高度*/
 
 .menu-move {
-  @extend .list-unstyled;
-  //background-color: red;
-  & > li {
+    @extend .list-unstyled;
     //background-color: red;
-    display: block;
-    height: 30px;
-    overflow: hidden;
-    padding: 5px 0;
-  }
+    & > li {
+        //background-color: red;
+        display: block;
+        height: 30px;
+        overflow: hidden;
+        padding: 5px 0;
+    }
 }
 
 .menu-move.ng-enter {
-  display: block;
-  overflow: hidden;
-  transition: all .5s ease;
-  & li {
-    margin: 0;
-    padding: 0;
+    display: block;
     overflow: hidden;
-    height: 0;
     transition: all .5s ease;
-  }
+    & li {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 0;
+        transition: all .5s ease;
+    }
 }
+
 .menu-move.ng-leave {
-  display: block;
-  overflow: hidden;
-  transition: all .5s ease;
-  &>li {
-    margin: 0;
-    padding: 0;
+    display: block;
     overflow: hidden;
-    height: 0;
     transition: all .5s ease;
-  }
+    & > li {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 0;
+        transition: all .5s ease;
+    }
 }
+
 .menu-move.ng-enter-active {
-  & > li {
-    height: 30px;
-    padding: 5px 0;
-  }
+    & > li {
+        height: 30px;
+        padding: 5px 0;
+    }
 }
 
 //.menu-move.ng-enter-stagger {
-  //display: block;
-  //transition-delay: 300ms;
+//display: block;
+//transition-delay: 300ms;
 //}
 
 .slide-animate {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
+
 .slide-animate.ng-enter {
-  position: absolute;
-  width: 100%;
-  animation: fadeInLeft 0.5s ease ;
+    position: absolute;
+    width: 100%;
+    animation: fadeInLeft 0.5s ease;
 }
+
 .slide-animate.ng-leave {
-  position: absolute;
-  width: 100%;
-  animation: fadeOutRight 0.5s ease ;
+    position: absolute;
+    width: 100%;
+    //animation: fadeOutRight 1s ease ;
+    animation: gaga 0.5s ease ;
+    .item-1 {
+        animation: flipOutX 1s ease;
+    }
+    .first-page {
+        animation: zoomOutDown 1s ease ;
+    }
+}
+
+.item-1.ng-enter {
+    //position: absolute;
+    animation: fadeInDown 0.5s ease;
+}
+
+.item-1.ng-leave {
+    //animation: flipOutX 0.5s ease ;
+}
+
+gaga {
+    0% {
+    }
+
+    100% {
+    }
 }
