@@ -77,7 +77,6 @@ app.controller("MainCtrl", ['$scope', "$http", function ($scope, $http) {
 
     /*点击显示子菜单*/
     function showSonMenu() {
-        console.log("fds");
         if ($scope.ifShowSonMenu) {
             $scope.ifShowSonMenu = false;
         } else {
@@ -96,14 +95,11 @@ app.controller("ListCtrl", ['$scope', '$http', "$stateParams", function ($scope,
     /*获取参数，判断需要显示的响应 文档列表*/
     var typeId = $stateParams['typeId'];
     $scope.typeId = typeId;
-    console.log(typeId);
     g.getDocument(function (data) {
-        console.log(data);
         if (typeId == "all") {
             $scope.list = data;
         } else {
             $scope.list = data.filter(function (v) {
-                console.log(v);
                 if (v["type_id"] == typeId) {
                     return true;
                 }
@@ -114,7 +110,20 @@ app.controller("ListCtrl", ['$scope', '$http', "$stateParams", function ($scope,
 }]);
 
 app.controller("DetailCtrl", ['$scope', '$http', "$stateParams", function ($scope, $http, $stateParams) {
-
+    var docId = $stateParams['docId'];
+    var url = "";
+    g.getDocument(function (list) {
+        for(var i = 1; i< list.length; i ++) {
+            if(list[i]['id'] == docId) {
+                url = list[i]['url']
+                $scope.url = url;
+                break;
+            }
+        }
+    })
+    $scope.goBack = function () {
+        history.go(-1);
+    }
 }])
 
 /*给“文档分类给具体的值”*/

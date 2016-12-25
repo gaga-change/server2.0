@@ -1,9 +1,10 @@
 .detail {
-    background-color: greenyellow;
+    //background-color: greenyellow;
+    overflow: hidden;
     height: 400px;
 }
 .header-back {
-    background-color: red;
+    //background-color: red;
     width: 50px;
     @extend .pull-right;
     a {
