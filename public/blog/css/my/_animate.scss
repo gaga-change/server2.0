@@ -83,6 +83,14 @@
     //animation: flipOutX 0.5s ease ;
 }
 
+.detail-animate.ng-enter {
+    animation: fadeInDown 0.5s ease;
+}
+.detail-animate.ng-leave {
+    animation: fadeOutDown 0.5s ease;
+}
+
+
 gaga {
     0% {
     }
