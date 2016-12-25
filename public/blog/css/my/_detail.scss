@@ -1,0 +1,15 @@
+.detail {
+    background-color: greenyellow;
+    height: 400px;
+}
+.header-back {
+    background-color: red;
+    width: 50px;
+    @extend .pull-right;
+    a {
+        cursor: pointer;
+    }
+    span {
+        font-size: 32px;
+    }
+}

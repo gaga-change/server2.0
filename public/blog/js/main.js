@@ -1,7 +1,6 @@
 /**
  * Created by dong on 2016/12/16.
  */
-var typeArr = ["1","2","3","4","5"];
 function G() {
     this.type = [];
     this.document = [];
@@ -39,32 +38,29 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
             }
         }
     });
-    /*所有文档*/
     $stateProvider.state({
-        name: "all",
-        url: "/all",
+        name: "gaga",
+        url: "/gaga/:docId",
+        views: {
+            detail: {
+                templateUrl: "blog/component/detail.html",
+                controller: "DetailCtrl"
+
+            }
+        }
+    })
+    $stateProvider.state({
+        name: "list",
+        url: "/:typeId",
         views: {
             content: {
-                templateUrl: "blog/component/list.html",
+                templateUrl: "blog/component/list.html?t=" + Math.floor(Date.now() / 1000),
                 controller: "ListCtrl"
+
             }
-        },
-        params: {id: "all"}
-    });
-    /*各种文档*/
-    typeArr.forEach(function (v) {
-        $stateProvider.state({
-            name: v,
-            url: "/" + v,
-            views: {
-                content: {
-                    templateUrl: "blog/component/list.html",
-                    controller: "ListCtrl"
-                }
-            },
-            params: {id: v}
-        });
-    });
+        }
+    })
+
     $urlRouterProvider.otherwise("index");
 
 }]);
@@ -98,7 +94,9 @@ app.controller("MainCtrl", ['$scope', "$http", function ($scope, $http) {
 
 app.controller("ListCtrl", ['$scope', '$http', "$stateParams", function ($scope, $http, $stateParams) {
     /*获取参数，判断需要显示的响应 文档列表*/
-    var typeId = $stateParams.id;
+    var typeId = $stateParams['typeId'];
+    $scope.typeId = typeId;
+    console.log(typeId);
     g.getDocument(function (data) {
         console.log(data);
         if (typeId == "all") {
@@ -114,6 +112,10 @@ app.controller("ListCtrl", ['$scope', '$http', "$stateParams", function ($scope,
         }
     })
 }]);
+
+app.controller("DetailCtrl", ['$scope', '$http', "$stateParams", function ($scope, $http, $stateParams) {
+
+}])
 
 /*给“文档分类给具体的值”*/
 setMyClassHeight();

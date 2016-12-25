@@ -5,6 +5,10 @@
         @extend .list-unstyled;
     }
     @at-root .item-1 {
+        a {
+            text-decoration: none;
+            @extend %black;
+        }
         @extend %hvr-reveal;
         margin: 20px 20px 30px;
         padding-bottom: 10px;

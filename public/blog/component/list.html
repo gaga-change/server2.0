@@ -1,9 +1,12 @@
+<!--<div ui-view="detail" class="" style="position: fixed;background-color: red"></div>-->
 <div class="list-fa">
     <ul>
         <li class="item-1" ng-repeat="i in list">
-            <h3 ng-bind="i.title"></h3>
-            <p ng-bind="i.description"></p>
-            <span ng-bind="i.time"></span>
+            <a ng-href="#/gaga/{{i.id}}">
+                <h3 ng-bind="i.title"></h3>
+                <p ng-bind="i.description"></p>
+                <span ng-bind="i.time"></span>
+            </a>
         </li>
     </ul>
 </div>
