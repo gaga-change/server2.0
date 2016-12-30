@@ -8,14 +8,14 @@ var compression = require('compression');
 
 var app = express();
 //设置端口号
-process.env.PORT = 8080;
+process.env.PORT = 8081;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'public'));
 app.engine('.html',ejs.renderFile); // 配置模板
 app.set('view engine', 'html');  //设置模板
 
-// app.use(compression());
+app.use(compression());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
